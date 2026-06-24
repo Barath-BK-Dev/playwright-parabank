@@ -1,0 +1,27 @@
+{
+  "name": "parabank-automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "headed": "playwright test --headed",
+    "debug": "playwright test --debug",
+    "ui": "playwright test --ui",
+    "chrome": "playwright test --project=chromium",
+    "firefox": "playwright test --project=firefox",
+    "smoke": "playwright test --grep @Smoke",
+    "regression": "playwright test --grep @Regression",
+    "report": "playwright show-report",
+    "qa": "cross-env TEST_ENV=qa playwright test tests/login.spec.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^25.6.0",
+    "cross-env": "^10.1.0",
+    "dotenv": "^17.4.2"
+  }
+}
