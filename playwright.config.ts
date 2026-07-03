@@ -23,7 +23,7 @@ export default defineConfig({
   retries: 0,
   workers: 10,
 
-  reporter: [["html"], ["list"]],
+  reporter: [["html", { open: "never" }], ["list"]],
 
   projects: [
     {
