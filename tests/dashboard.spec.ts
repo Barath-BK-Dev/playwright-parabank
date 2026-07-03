@@ -4,9 +4,10 @@ import { env } from "../config/env";
 test("Validate account balances after login", async ({
   loginPage,
   dashboardPage,
+  page,
 }) => {
-  await loginPage.goto();
-  await loginPage.loginAndExpectSuccess(env.username, env.password);
+  await page.goto("/parabank/overview.htm");
+  await page.waitForURL(/overview/);
 
   await dashboardPage.verifyDashboardLoaded();
 

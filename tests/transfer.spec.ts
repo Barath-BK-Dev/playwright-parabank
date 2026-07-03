@@ -3,15 +3,15 @@ import { env } from "../config/env";
 import { TransferPage } from "../pages/TransferPage";
 
 test("@Regression Transfer funds and validate balance", async ({
-  loginPage,
+  // loginPage,
   dashboardPage,
   page,
 }) => {
   const transferPage = new TransferPage(page);
 
-  // Login
-  await loginPage.goto();
-  await loginPage.loginAndExpectSuccess(env.username, env.password);
+  // Navigate to dashboard
+  await page.goto("/parabank/overview.htm");
+  await page.waitForURL(/overview/);
 
   // Get initial balance
   await dashboardPage.verifyDashboardLoaded();

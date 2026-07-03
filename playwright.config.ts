@@ -27,6 +27,16 @@ export default defineConfig({
 
   projects: [
     {
+      name: "setup auth",
+      testDir: "./auth",
+      testMatch: /auth\.setup\.ts/,
+      use: {
+        baseURL: process.env.BASE_URL!,
+        browserName: "chromium",
+        headless: true,
+      },
+    },
+    {
       name: "chromium",
       use: {
         baseURL: process.env.BASE_URL!,
@@ -34,7 +44,9 @@ export default defineConfig({
         headless: true,
         screenshot: "on",
         trace: "on",
+        storageState: "auth.json",
       },
+      dependencies: ["setup auth"],
     },
   ],
 
