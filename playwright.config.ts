@@ -48,6 +48,18 @@ export default defineConfig({
       },
       dependencies: ["setup auth"],
     },
+    {
+      name: "firefox",
+      use: {
+        baseURL: process.env.BASE_URL!,
+        browserName: "firefox",
+        headless: true,
+        screenshot: "on",
+        trace: "on",
+        storageState: "auth.json",
+      },
+      dependencies: ["setup auth"],
+    },
   ],
 
   /* Run your local dev server before starting the tests */
